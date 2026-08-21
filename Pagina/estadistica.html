@@ -1,0 +1,9 @@
+const rol=localStorage.getItem("rol");
+
+if(rol!=="Administrador"){
+
+    alert("No tiene permisos para acceder.");
+
+    window.location="menu.html";
+
+}
