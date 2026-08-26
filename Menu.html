@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Principal | Sistema de Campaña Región 4</title>
+  <link rel="stylesheet" href="css/estiloss.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <main class="contenedor-menu">
+    <header class="cabecera">
+      <div class="marca">
+        <div class="logo"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <h1>Sistema de Campaña Región 4</h1>
+          <h2 id="usuarioActivo">Bienvenido</h2>
+        </div>
+      </div>
+      <button class="salir" type="button" onclick="cerrarSesion()">
+        <i class="fa-solid fa-right-from-bracket"></i> Salir
+      </button>
+    </header>
+
+    <section class="bienvenida">
+      <div>
+        <span class="eyebrow">PANEL PRINCIPAL</span>
+        <h3>Gestión de registros</h3>
+        <p>Selecciona una opción para continuar.</p>
+      </div>
+      <div class="estado"><i class="fa-solid fa-circle-check"></i> Sesión activa</div>
+    </section>
+
+    <section class="tarjetas" aria-label="Opciones del sistema">
+      <button class="tarjeta" id="btnRegistro" type="button" onclick="abrir('registro.html')">
+        <span class="icono"><i class="fa-solid fa-user-plus"></i></span>
+        <h2>Registro</h2><p>Alta de ciudadanos</p>
+      </button>
+      <button class="tarjeta" id="btnPeticiones" type="button" onclick="abrir('peticiones.html')">
+        <span class="icono"><i class="fa-solid fa-hand-holding-heart"></i></span>
+        <h2>Peticiones Ciudadanas</h2><p>Solicitudes de apoyo</p>
+      </button>
+      <button class="tarjeta" id="btnOperacion" type="button" onclick="abrir('operacion.html')">
+        <span class="icono"><i class="fa-solid fa-people-group"></i></span>
+        <h2>Solicitudes para Operar</h2><p>Lonas, bardas y reuniones</p>
+      </button>
+      <button class="tarjeta" id="btnMisRegistros" type="button" onclick="abrir('misregistros.html')">
+        <span class="icono"><i class="fa-solid fa-folder-open"></i></span>
+        <h2>Mis Registros</h2><p>Consultar información capturada</p>
+      </button>
+      <button class="tarjeta" id="btnEstadisticas" type="button" onclick="abrir('estadistica.html')">
+        <span class="icono"><i class="fa-solid fa-chart-line"></i></span>
+        <h2>Estadísticas</h2><p>Indicadores y avances</p>
+      </button>
+      <button class="tarjeta" id="btnInformes" type="button" onclick="abrir('informes.html')">
+        <span class="icono"><i class="fa-solid fa-file-pdf"></i></span>
+        <h2>Informes</h2><p>Generar y exportar informes</p>
+      </button>
+      <button class="tarjeta" id="btnUsuarios" type="button" onclick="abrir('usuarios.html')">
+        <span class="icono"><i class="fa-solid fa-user-gear"></i></span>
+        <h2>Administrar Usuarios</h2><p>Gestión de usuarios del sistema</p>
+      </button>
+      <button class="tarjeta" id="btnConfiguracion" type="button" onclick="abrir('validacion.html')">
+        <span class="icono"><i class="fa-solid fa-shield-halved"></i></span>
+        <h2>Validaciones</h2><p>Validación de registros</p>
+      </button>
+    </section>
+  </main>
+
+  <script src="js/permisos.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

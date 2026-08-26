@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informes</title>
+  <link rel="stylesheet" href="css/informes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="contenedor-informes">
+  <header class="encabezado-informes">
+    <div>
+      <h1><i class="fa-solid fa-file-lines"></i> Informes</h1>
+      <p>Consulta y descarga informes por fechas, sección o usuario.</p>
+    </div>
+    <button class="btn-volver" onclick="window.location='menu.html'"><i class="fa-solid fa-arrow-left"></i> Regresar</button>
+  </header>
+
+  <div id="mensaje" class="mensaje oculto"></div>
+
+  <div class="pestanas">
+    <button class="pestana activa" data-tab="fechas"><i class="fa-solid fa-calendar-days"></i> Por fechas</button>
+    <button class="pestana" data-tab="seccion"><i class="fa-solid fa-layer-group"></i> Por sección</button>
+    <button class="pestana" data-tab="usuario"><i class="fa-solid fa-user"></i> Por usuario</button>
+  </div>
+
+  <section id="tabFechas" class="panel-informe">
+    <div class="titulo-panel"><div class="icono-panel"><i class="fa-solid fa-calendar-days"></i></div><div><h2>Informe por rango de fechas</h2><p>Consulta los registros de una o todas las categorías dentro de un periodo.</p></div></div>
+    <div class="form-grid">
+      <div class="campo"><label for="fechaInicio">Fecha inicial</label><input type="date" id="fechaInicio"></div>
+      <div class="campo"><label for="fechaFin">Fecha final</label><input type="date" id="fechaFin"></div>
+      <div class="campo"><label for="categoria">Categoría</label><select id="categoria"><option value="todas">Todas las categorías</option><option value="Ciudadanos">Ciudadanos</option><option value="Peticiones">Peticiones</option><option value="Operaciones">Operaciones</option><option value="Bardas">Bardas</option><option value="Reuniones">Reuniones</option></select></div>
+    </div>
+    <div class="acciones">
+      <button id="btnConsultarFechas" class="btn-principal"><i class="fa-solid fa-magnifying-glass"></i> Generar informe</button>
+      <button id="btnPdfFechas" class="btn-pdf" disabled><i class="fa-solid fa-file-pdf"></i> Descargar PDF</button>
+      <button id="btnExcelFechas" class="btn-excel" disabled><i class="fa-solid fa-file-excel"></i> Descargar Excel</button>
+    </div>
+    <div id="resumenFechas" class="resumen-informe"></div><div id="resultadoFechas" class="resultado"></div>
+  </section>
+
+  <section id="tabSeccion" class="panel-informe oculto">
+    <div class="titulo-panel"><div class="icono-panel"><i class="fa-solid fa-layer-group"></i></div><div><h2>Informe por sección</h2><p>Consulta todos los registros asociados con una sección.</p></div></div>
+    <div class="form-grid seccion-grid"><div class="campo"><label for="seccion">Sección</label><input type="text" id="seccion" placeholder="Ejemplo: 1234" autocomplete="off"></div></div>
+    <div class="acciones">
+      <button id="btnConsultarSeccion" class="btn-principal"><i class="fa-solid fa-magnifying-glass"></i> Consultar sección</button>
+      <button id="btnPdfSeccion" class="btn-pdf" disabled><i class="fa-solid fa-file-pdf"></i> Descargar PDF</button>
+      <button id="btnExcelSeccion" class="btn-excel" disabled><i class="fa-solid fa-file-excel"></i> Descargar Excel</button>
+    </div>
+    <div id="resumenSeccion" class="resumen-informe"></div><div id="resultadoSeccion" class="resultado"></div>
+  </section>
+
+  <section id="tabUsuario" class="panel-informe oculto">
+    <div class="titulo-panel"><div class="icono-panel"><i class="fa-solid fa-user"></i></div><div><h2>Informe por usuario</h2><p>Consulta todo lo registrado por un usuario y descarga el informe en PDF, Excel o Word.</p></div></div>
+    <div class="form-grid seccion-grid">
+      <div class="campo"><label for="usuarioInforme">Usuario</label><select id="usuarioInforme"><option value="">Seleccione un usuario...</option></select></div>
+    </div>
+    <div class="acciones">
+      <button id="btnConsultarUsuario" class="btn-principal"><i class="fa-solid fa-magnifying-glass"></i> Consultar usuario</button>
+      <button id="btnPdfUsuario" class="btn-pdf" disabled><i class="fa-solid fa-file-pdf"></i> Descargar PDF</button>
+      <button id="btnExcelUsuario" class="btn-excel" disabled><i class="fa-solid fa-file-excel"></i> Descargar Excel</button>
+      <button id="btnWordUsuario" class="btn-word" disabled><i class="fa-solid fa-file-word"></i> Descargar Word</button>
+    </div>
+    <div id="resumenUsuario" class="resumen-informe"></div><div id="resultadoUsuario" class="resultado"></div>
+  </section>
+</div>
+<script src="js/informes.js"></script>
+</body>
+</html>

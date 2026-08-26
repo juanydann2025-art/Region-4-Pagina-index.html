@@ -1,240 +1,612 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<title>Mis Registros</title>
+  <title>Mis Registros</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="css/misregistros.css"
+  >
 
-<link rel="stylesheet"
-href="css/estilosss.css">
-
-<style>
-
-body {
-  background: #f5f5f5;
-}
-
-.formulario {
-  max-width: 900px;
-  margin: 25px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.12);
-}
-
-h1 {
-  background: #f8caca;
-  color: #b30000;
-  padding: 18px;
-  border-radius: 12px;
-  text-align: center;
-  margin-top: 0;
-}
-
-.botonesCategorias {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 20px 0;
-}
-
-.btnCategoria {
-  border: none;
-  background: #c62828;
-  color: white;
-  padding: 14px 10px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.btnCategoria:hover {
-  background: #9e1f1f;
-  transform: translateY(-2px);
-}
-
-.btnCategoria i {
-  margin-right: 6px;
-}
-
-#listaRegistros {
-  margin-top: 20px;
-}
-
-.tarjeta {
-  background: #fff;
-  border-left: 6px solid #c62828;
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.10);
-}
-
-.tarjeta h2 {
-  color: #b30000;
-  margin-top: 0;
-}
-
-.dato {
-  margin: 6px 0;
-}
-
-.etiqueta {
-  font-weight: bold;
-  color: #555;
-}
-
-.sinRegistros {
-  text-align: center;
-  padding: 30px;
-  color: #777;
-}
-
-.cargando {
-  text-align: center;
-  color: #b30000;
-  padding: 25px;
-  font-weight: bold;
-}
-
-@media(max-width:700px) {
-
-  .botonesCategorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media(max-width:450px) {
-
-  .botonesCategorias {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-</style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
 </head>
 
-
 <body>
 
-<div class="formulario">
+  <main class="contenedor">
 
-<h1>
+    <header class="cabecera">
 
-<i class="fa-solid fa-folder-open"></i>
+      <div class="marca">
 
-Mis Registros
+        <div class="logo">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
 
-</h1>
+        <div>
 
+          <span class="eyebrow">
+            SISTEMA DE CAMPAÑA REGIÓN 4
+          </span>
 
-<div class="botonesCategorias">
+          <h1>
+            Mis Registros
+          </h1>
 
-<button
-class="btnCategoria"
-onclick="cargarCategoria('ciudadanos')">
+          <p id="usuarioActivo">
+            Cargando usuario...
+          </p>
 
-<i class="fa-solid fa-users"></i>
+        </div>
 
-Ciudadanos
+      </div>
 
-</button>
+      <button
+        type="button"
+        class="btn-volver"
+        onclick="volverMenu()"
+      >
+        <i class="fa-solid fa-arrow-left"></i>
+        Menú
+      </button>
 
-
-<button
-class="btnCategoria"
-onclick="cargarCategoria('peticiones')">
-
-<i class="fa-solid fa-file-lines"></i>
-
-Peticiones
-
-</button>
-
-
-<button
-class="btnCategoria"
-onclick="cargarCategoria('operaciones')">
-
-<i class="fa-solid fa-screwdriver-wrench"></i>
-
-Lonas
-
-</button>
+    </header>
 
 
-<button
-class="btnCategoria"
-onclick="cargarCategoria('bardas')">
+    <section
+      id="avisoInactividad"
+      class="aviso-inactividad oculto"
+    >
 
-<i class="fa-solid fa-brush"></i>
+      <div class="aviso-icono">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
 
-Bardas
+      <div>
 
-</button>
+        <strong>
+          Mantén actualizada tu base de ciudadanos
+        </strong>
 
+        <p>
+          No has registrado ciudadanos durante los últimos
+          2 días. Te recomendamos mantener actualizada la
+          base para llevar un mejor seguimiento.
+        </p>
 
-<button
-class="btnCategoria"
-onclick="cargarCategoria('reuniones')">
+      </div>
 
-<i class="fa-solid fa-users"></i>
+      <button
+        type="button"
+        onclick="cerrarAviso()"
+        class="cerrar-aviso"
+        aria-label="Cerrar aviso"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
-Reuniones
-
-</button>
-
-</div>
-
-
-<div id="listaRegistros">
-
-<div class="sinRegistros">
-
-<i class="fa-solid fa-hand-pointer"></i>
-
-<br><br>
-
-Selecciona una categoría para consultar tus registros.
-
-</div>
-
-</div>
+    </section>
 
 
-<br>
+    <section class="resumen">
+
+      <div class="resumen-card principal">
+
+        <div class="resumen-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+
+          <span>
+            Ciudadanos registrados
+          </span>
+
+          <strong id="totalCiudadanos">
+            0 / 90
+          </strong>
+
+        </div>
+
+      </div>
 
 
-<button
-class="boton"
-onclick="regresar()">
+      <div class="resumen-card">
 
-<i class="fa-solid fa-arrow-left"></i>
+        <span>
+          Avance
+        </span>
 
-Regresar
+        <strong id="porcentajeAvance">
+          0%
+        </strong>
 
-</button>
+      </div>
 
 
-</div>
+      <div class="resumen-card">
+
+        <span>
+          Faltan
+        </span>
+
+        <strong id="faltanCiudadanos">
+          90
+        </strong>
+
+      </div>
 
 
-<script src="js/misregistros.js"></script>
+      <div class="resumen-card">
+
+        <span>
+          Votaron
+        </span>
+
+        <strong id="totalVotaron">
+          0
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <section class="progreso-card">
+
+      <div class="progreso-cabecera">
+
+        <div>
+
+          <span class="eyebrow">
+            META PERSONAL
+          </span>
+
+          <h2>
+            Avance de ciudadanos
+          </h2>
+
+        </div>
+
+        <strong id="textoProgreso">
+          0 de 90
+        </strong>
+
+      </div>
+
+      <div class="barra">
+
+        <div
+          id="barraProgreso"
+          style="width:0%"
+        ></div>
+
+      </div>
+
+      <p id="mensajeProgreso">
+        Comienza a registrar ciudadanos para avanzar
+        hacia tu meta.
+      </p>
+
+    </section>
+
+
+    <nav
+      class="pestanas-principales"
+      role="tablist"
+      aria-label="Categorías de registros"
+    >
+
+      <button
+        type="button"
+        class="pestana activa"
+        data-categoria="ciudadanos"
+        onclick="seleccionarCategoria('ciudadanos')"
+      >
+        <i class="fa-solid fa-users"></i>
+        Ciudadanos
+      </button>
+
+
+      <button
+        type="button"
+        class="pestana"
+        data-categoria="peticiones"
+        onclick="seleccionarCategoria('peticiones')"
+      >
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        Peticiones
+      </button>
+
+
+      <button
+        type="button"
+        class="pestana"
+        data-categoria="operaciones"
+        onclick="seleccionarCategoria('operaciones')"
+      >
+        <i class="fa-solid fa-people-group"></i>
+        Lonas
+      </button>
+
+
+      <button
+        type="button"
+        class="pestana"
+        data-categoria="bardas"
+        onclick="seleccionarCategoria('bardas')"
+      >
+        <i class="fa-solid fa-paint-roller"></i>
+        Bardas
+      </button>
+
+
+      <button
+        type="button"
+        class="pestana"
+        data-categoria="reuniones"
+        onclick="seleccionarCategoria('reuniones')"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        Reuniones
+      </button>
+
+
+      <button
+        type="button"
+        class="pestana"
+        data-categoria="avance"
+        onclick="seleccionarCategoria('avance')"
+      >
+        <i class="fa-solid fa-chart-line"></i>
+        Mi avance
+      </button>
+
+    </nav>
+
+
+    <section
+      id="subPestanas"
+      class="subpestanas"
+      aria-label="Filtros de registros"
+    ></section>
+
+
+    <section class="contenido">
+
+      <div id="listaRegistros"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       MODAL REALIZADO
+  ============================================================ -->
+
+  <div
+    id="modalRealizado"
+    class="modal-overlay oculto"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tituloModalRealizado"
+  >
+
+    <div class="modal-realizado">
+
+      <div class="modal-cabecera">
+
+        <div>
+
+          <span class="eyebrow">
+            ACTUALIZAR REGISTRO
+          </span>
+
+          <h2 id="tituloModalRealizado">
+            Marcar como realizado
+          </h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="modal-cerrar"
+          onclick="cerrarModalRealizado()"
+          aria-label="Cerrar"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div
+        id="infoRegistroRealizado"
+        class="info-registro-realizado"
+      ></div>
+
+
+      <form
+        id="formRealizado"
+        onsubmit="guardarRealizado(event)"
+        autocomplete="off"
+      >
+
+        <input
+          type="hidden"
+          id="realizadoFolio"
+          name="realizadoFolio"
+        >
+
+        <input
+          type="hidden"
+          id="realizadoCategoria"
+          name="realizadoCategoria"
+        >
+
+        <input
+          type="hidden"
+          id="realizadoFila"
+          name="realizadoFila"
+        >
+
+
+        <div class="campo">
+
+          <label for="realizadoFecha">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            Fecha de realización
+
+          </label>
+
+          <input
+            type="date"
+            id="realizadoFecha"
+            name="fechaRealizado"
+            required
+          >
+
+        </div>
+
+
+        <div class="campo">
+
+          <label for="realizadoComentario">
+
+            <i class="fa-regular fa-comment"></i>
+
+            Comentario <span style="color:red;">*</span>
+
+          </label>
+
+          <textarea
+            id="realizadoComentario"
+            name="comentarioRealizado"
+            rows="4"
+            placeholder="Escribe un comentario sobre cómo se realizó..."
+            required
+            minlength="1"
+          ></textarea>
+
+        </div>
+
+
+        <div class="campo">
+
+          <label>
+
+            <i class="fa-solid fa-camera"></i>
+
+            Fotografía de evidencia
+
+          </label>
+
+
+          <div class="foto-realizado">
+
+            <label
+              for="realizadoFoto"
+              class="btn-foto-realizado"
+            >
+
+              <i class="fa-solid fa-camera"></i>
+
+              Tomar / seleccionar foto
+
+            </label>
+
+
+            <input
+              type="file"
+              id="realizadoFoto"
+              name="realizadoFoto"
+              accept="image/*"
+              capture="environment"
+              onchange="previsualizarFotoRealizado(this)"
+              hidden
+            >
+
+
+            <div
+              id="previewFotoRealizado"
+              class="preview-foto-realizado"
+            >
+
+              <div class="preview-vacio">
+
+                <i class="fa-regular fa-image"></i>
+
+                <span>
+                  No se ha seleccionado fotografía
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-acciones">
+
+          <button
+            type="button"
+            class="btn-modal cancelar"
+            onclick="cerrarModalRealizado()"
+          >
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Cancelar
+
+          </button>
+
+
+          <button
+            type="submit"
+            class="btn-modal guardar"
+            id="btnGuardarRealizado"
+          >
+
+            <i class="fa-solid fa-check"></i>
+
+            Guardar como realizado
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       MODAL EVIDENCIA
+  ============================================================ -->
+
+  <div
+    id="modalEvidencia"
+    class="modal-overlay oculto"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tituloModalEvidencia"
+  >
+
+    <div class="modal-evidencia">
+
+      <div class="modal-cabecera">
+
+        <div>
+
+          <span class="eyebrow">
+            EVIDENCIA
+          </span>
+
+          <h2 id="tituloModalEvidencia">
+            Fotografía del registro
+          </h2>
+
+        </div>
+
+        <button
+          type="button"
+          class="modal-cerrar"
+          onclick="cerrarModalEvidencia()"
+          aria-label="Cerrar"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div
+        id="infoEvidencia"
+        class="info-registro-realizado"
+      ></div>
+
+
+      <div class="evidencia-imagen-contenedor">
+
+        <img
+          id="imagenEvidencia"
+          src=""
+          alt="Fotografía de evidencia"
+        >
+
+      </div>
+
+
+      <div class="modal-acciones">
+
+        <button
+          type="button"
+          class="btn-modal cancelar"
+          onclick="cerrarModalEvidencia()"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+          Cerrar
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       CARGANDO
+  ============================================================ -->
+
+  <div
+    id="cargandoGeneral"
+    class="cargando-general oculto"
+  >
+
+    <div class="cargando-general-contenido">
+
+      <i class="fa-solid fa-spinner fa-spin"></i>
+
+      <span id="textoCargandoGeneral">
+        Procesando...
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       EL ?v=2 OBLIGA A CARGAR LA VERSIÓN NUEVA
+  ============================================================ -->
+
+  <script src="js/misregistros.js?v=20260826-3"></script>
 
 </body>
-
 </html>
