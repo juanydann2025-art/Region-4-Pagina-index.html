@@ -1,0 +1,491 @@
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f4f4;
+
+    color: #333;
+
+}
+
+
+.formulario {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+
+}
+
+
+/* ========================================
+   TITULOS
+======================================== */
+
+h1 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #b00000;
+
+}
+
+
+h1 i {
+
+    margin-right: 8px;
+
+}
+
+
+h2 {
+
+    margin-top: 25px;
+
+    margin-bottom: 18px;
+
+    color: #333;
+
+}
+
+
+h2 i {
+
+    margin-right: 7px;
+
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.encabezado {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    margin-bottom: 25px;
+
+    background: #f7f7f7;
+
+    border-radius: 8px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.campo {
+
+    margin-bottom: 16px;
+
+}
+
+
+.campo label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+}
+
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+}
+
+
+.campo input:focus,
+.campo select:focus {
+
+    outline: none;
+
+    border-color: #b00000;
+
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.botones {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+}
+
+
+.boton {
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.boton:hover {
+
+    opacity: 0.9;
+
+}
+
+
+.boton.guardar {
+
+    background: #198754;
+
+    color: white;
+
+}
+
+
+.boton.limpiar {
+
+    background: #6c757d;
+
+    color: white;
+
+}
+
+
+.boton.regresar {
+
+    background: #b00000;
+
+    color: white;
+
+}
+
+
+.boton:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* ========================================
+   BÚSQUEDA
+======================================== */
+
+.busqueda {
+
+    position: relative;
+
+    margin-bottom: 15px;
+
+}
+
+
+.busqueda input {
+
+    width: 100%;
+
+    padding: 12px 40px 12px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+}
+
+
+.busqueda i {
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #777;
+
+}
+
+
+/* ========================================
+   TABLA
+======================================== */
+
+.tabla-contenedor {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+
+}
+
+
+thead {
+
+    background: #b00000;
+
+    color: white;
+
+}
+
+
+th,
+td {
+
+    padding: 10px;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+tbody tr:nth-child(even) {
+
+    background: #f8f8f8;
+
+}
+
+
+tbody tr:hover {
+
+    background: #eeeeee;
+
+}
+
+
+/* ========================================
+   USUARIO INACTIVO
+======================================== */
+
+.usuario-inactivo {
+
+    background: #ffe0e0 !important;
+
+    color: #a00000;
+
+}
+
+
+/* ========================================
+   BOTONES DE ACCIONES
+======================================== */
+
+.accion {
+
+    border: none;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin: 2px;
+
+    color: white;
+
+}
+
+
+.accion.editar {
+
+    background: #0d6efd;
+
+}
+
+
+.accion.activar {
+
+    background: #198754;
+
+}
+
+
+.accion:hover {
+
+    opacity: 0.85;
+
+}
+
+
+/* ========================================
+   MENSAJES
+======================================== */
+
+.mensaje {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+
+.mensaje.exito {
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+
+}
+
+
+.mensaje.error {
+
+    background: #f8d7da;
+
+    color: #842029;
+
+}
+
+
+.mensaje.info {
+
+    background: #cff4fc;
+
+    color: #055160;
+
+}
+
+
+/* ========================================
+   SEPARADOR
+======================================== */
+
+hr {
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin: 30px 0;
+
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .formulario {
+
+        padding: 15px;
+
+    }
+
+
+    .encabezado {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Encuesta Ciudadana</title>
+
+<link rel="stylesheet" href="css/estylos.css">
+
+</head>
+
+
+<body>
+
+
+<div class="formulario">
+
+
+<h1>
+Encuesta Ciudadana
+</h1>
+
+
+
+<div class="campo">
+
+<label>
+¿Conoce a la precandidata a Presidenta Municipal?
+</label>
+
+
+<select id="conoce">
+
+<option value="">
+Seleccione
+</option>
+
+<option>
+Sí
+</option>
+
+<option>
+No
+</option>
+
+</select>
+
+
+</div>
+
+
+
+<div class="campo">
+
+
+<label>
+¿Qué considera se tiene que mejorar en su comunidad?
+</label>
+
+
+<textarea
+id="mejora"
+rows="4"
+placeholder="Escriba su opinión">
+</textarea>
+
+
+</div>
+
+
+
+
+<h2>
+Principales necesidades
+</h2>
+
+
+<div class="check">
+
+
+<label>
+<input 
+type="checkbox"
+value="Seguridad">
+Seguridad
+</label>
+
+
+<label>
+<input 
+type="checkbox"
+value="Agua potable">
+Agua potable
+</label>
+
+
+<label>
+<input 
+type="checkbox"
+value="Alumbrado">
+Alumbrado
+</label>
+
+
+<label>
+<input 
+type="checkbox"
+value="Bacheo">
+Bacheo
+</label>
+
+
+<label>
+<input 
+type="checkbox"
+value="Pavimentación">
+Pavimentación
+</label>
+
+
+<label>
+<input 
+type="checkbox"
+value="Otro"
+id="otroCheck">
+Otro
+</label>
+
+
+</div>
+
+
+
+
+<input
+
+id="otro"
+
+placeholder="Especifique otro">
+
+
+<br>
+
+
+
+<button
+
+class="btn"
+
+onclick="guardarEncuesta()">
+
+Guardar Registro
+
+</button>
+
+
+</div>
+
+
+<script src="js/encuesta.js"></script>
+
+
+</body>
+
+</html>

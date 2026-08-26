@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Registro Ciudadano Región 4</title>
+
+<link rel="stylesheet"
+      href="css/peti.css">
+
+</head>
+
+
+<body>
+
+
+<div class="formulario">
+
+
+<h1>
+Registro Ciudadano
+</h1>
+
+
+<!-- ================================= -->
+<!-- NOMBRE Y EDAD -->
+<!-- ================================= -->
+
+<div class="fila">
+
+
+<div class="campo">
+
+<label>
+Nombre completo
+</label>
+
+<input
+id="nombre"
+type="text">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Edad
+</label>
+
+<input
+id="edad"
+type="number">
+
+</div>
+
+
+</div>
+
+
+<!-- ================================= -->
+<!-- SEXO Y TELÉFONO -->
+<!-- ================================= -->
+
+<div class="fila">
+
+
+<div class="campo">
+
+<label>
+Sexo
+</label>
+
+<select id="sexo">
+
+<option value="">
+Seleccione
+</option>
+
+<option value="Masculino">
+Masculino
+</option>
+
+<option value="Femenino">
+Femenino
+</option>
+
+<option value="Otro">
+Otro
+</option>
+
+</select>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Teléfono
+</label>
+
+<input
+id="telefono"
+type="tel">
+
+</div>
+
+
+</div>
+
+
+<!-- ================================= -->
+<!-- SECCIÓN Y COMUNIDAD -->
+<!-- ================================= -->
+
+<div class="fila">
+
+
+<div class="campo">
+
+<label>
+Sección
+</label>
+
+<select id="seccion">
+
+<option value="">
+Seleccione sección
+</option>
+
+<option value="4953">4953</option>
+<option value="4954">4954</option>
+<option value="4955">4955</option>
+<option value="4962">4962</option>
+<option value="5025">5025</option>
+<option value="5026">5026</option>
+<option value="5027">5027</option>
+<option value="5034">5034</option>
+<option value="5035">5035</option>
+<option value="5036">5036</option>
+<option value="5049">5049</option>
+<option value="5050">5050</option>
+<option value="5066">5066</option>
+<option value="5067">5067</option>
+<option value="5068">5068</option>
+<option value="5069">5069</option>
+<option value="5070">5070</option>
+<option value="5071">5071</option>
+<option value="5072">5072</option>
+<option value="5073">5073</option>
+<option value="5074">5074</option>
+<option value="5075">5075</option>
+<option value="5076">5076</option>
+<option value="5077">5077</option>
+<option value="5078">5078</option>
+<option value="5079">5079</option>
+<option value="5080">5080</option>
+
+</select>
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Comunidad
+</label>
+
+<select id="comunidad">
+
+<option value="">
+Seleccione comunidad
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<!-- ================================= -->
+<!-- CALLE Y NÚMERO -->
+<!-- ================================= -->
+
+<div class="fila">
+
+
+<div class="campo">
+
+<label>
+Calle
+</label>
+
+<input
+id="calle"
+type="text"
+placeholder="Nombre de la calle">
+
+</div>
+
+
+<div class="campo">
+
+<label>
+Número
+</label>
+
+<input
+id="numero"
+type="text"
+placeholder="Número">
+
+</div>
+
+
+</div>
+
+
+<!-- ================================= -->
+<!-- IDENTIFICACIÓN INE -->
+<!-- ================================= -->
+
+<hr>
+
+
+<h2>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Identificación INE
+
+</h2>
+
+
+<!-- ================================= -->
+<!-- INE FRENTE -->
+<!-- ================================= -->
+
+<div class="foto">
+
+<label>
+INE frente
+</label>
+
+
+<img
+id="vistaFrente"
+alt="Vista previa INE frente">
+
+
+<input
+type="file"
+accept="image/*"
+capture="environment"
+id="ineFrente">
+
+</div>
+
+
+<!-- ================================= -->
+<!-- INE ATRÁS -->
+<!-- ================================= -->
+
+<div class="foto">
+
+<label>
+INE atrás
+</label>
+
+
+<img
+id="vistaAtras"
+alt="Vista previa INE atrás">
+
+
+<input
+type="file"
+accept="image/*"
+capture="environment"
+id="ineAtras">
+
+</div>
+
+
+<!-- ================================= -->
+<!-- BOTONES -->
+<!-- ================================= -->
+
+<div class="botones-fila">
+
+
+<button
+type="button"
+class="boton"
+onclick="siguiente()">
+
+Siguiente
+
+</button>
+
+
+<a
+href="Menu.html"
+class="boton boton-menu">
+
+Regresar al menú
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<script src="js/registro.js?v=3"></script>
+
+
+</body>
+
+</html>

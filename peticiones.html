@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Peticiones Ciudadanas</title>
+
+<link rel="stylesheet"
+      href="css/peti.css">
+
+</head>
+
+
+<body>
+
+
+<div class="formulario">
+
+
+<h1>
+<i class="fa-solid fa-hand-holding-heart"></i>
+Peticiones Ciudadanas
+</h1>
+
+
+<div class="grid">
+
+
+<!-- ================================= -->
+<!-- SECCIÓN -->
+<!-- ================================= -->
+
+<div>
+
+<label>
+Sección
+</label>
+
+
+<select id="seccion">
+
+<option value="">
+Seleccione sección
+</option>
+
+<option value="4953">4953</option>
+<option value="4954">4954</option>
+<option value="4955">4955</option>
+<option value="4962">4962</option>
+<option value="5025">5025</option>
+<option value="5026">5026</option>
+<option value="5027">5027</option>
+<option value="5034">5034</option>
+<option value="5035">5035</option>
+<option value="5036">5036</option>
+<option value="5049">5049</option>
+<option value="5050">5050</option>
+<option value="5066">5066</option>
+<option value="5067">5067</option>
+<option value="5068">5068</option>
+<option value="5069">5069</option>
+<option value="5070">5070</option>
+<option value="5071">5071</option>
+<option value="5072">5072</option>
+<option value="5073">5073</option>
+<option value="5074">5074</option>
+<option value="5075">5075</option>
+<option value="5076">5076</option>
+<option value="5077">5077</option>
+<option value="5078">5078</option>
+<option value="5079">5079</option>
+<option value="5080">5080</option>
+
+</select>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- COMUNIDAD -->
+<!-- ================================= -->
+
+<div>
+
+<label>
+Comunidad
+</label>
+
+
+<select id="comunidad">
+
+<option value="">
+Seleccione comunidad
+</option>
+
+</select>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- TIPO DE SOLICITUD -->
+<!-- ================================= -->
+
+<div>
+
+<label>
+Tipo de solicitud
+</label>
+
+
+<select id="tipoSolicitud">
+
+<option value="">
+Seleccione
+</option>
+
+<option value="Silla de ruedas">
+Silla de ruedas
+</option>
+
+<option value="Bastón">
+Bastón
+</option>
+
+<option value="Láminas">
+Láminas
+</option>
+
+<option value="Otro">
+Otro
+</option>
+
+</select>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- OTRO -->
+<!-- ================================= -->
+
+<div>
+
+<label>
+Especifique si seleccionó otro
+</label>
+
+
+<input
+id="otroSolicitud"
+type="text">
+
+</div>
+
+
+</div>
+
+
+<hr>
+
+
+<!-- ================================= -->
+<!-- JUSTIFICACIÓN -->
+<!-- ================================= -->
+
+<div class="campo">
+
+<label>
+Justificación de la solicitud
+</label>
+
+
+<textarea
+id="justificacion"
+rows="5"
+placeholder="Explique por qué requiere el apoyo">
+</textarea>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- FOTOGRAFÍA -->
+<!-- ================================= -->
+
+<div class="foto">
+
+<label>
+Fotografía de evidencia
+</label>
+
+
+<input
+type="file"
+id="fotoSolicitud"
+accept="image/*"
+capture="environment">
+
+
+<img
+id="vistaSolicitud"
+alt="Vista previa de evidencia">
+
+</div>
+
+
+<!-- ================================= -->
+<!-- BOTÓN -->
+<!-- ================================= -->
+
+<button
+type="button"
+class="boton"
+onclick="guardarPeticion()">
+
+Guardar Solicitud
+
+</button>
+
+
+</div>
+
+
+<script src="js/peticiones.js?v=4"></script>
+
+
+</body>
+
+</html>

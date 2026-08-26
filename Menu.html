@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Menú Principal</title>
+
+<link rel="stylesheet"
+      href="css/estiloss.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="contenedor-menu">
+
+
+<!-- ========================================
+     CABECERA
+======================================== -->
+
+<header class="cabecera">
+
+
+<div>
+
+<h1>
+
+<i class="fa-solid fa-users"></i>
+
+Sistema de Campaña Región 4
+
+</h1>
+
+
+<h2 id="usuarioActivo">
+
+Bienvenido
+
+</h2>
+
+</div>
+
+
+
+<button
+class="salir"
+onclick="cerrarSesion()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Salir
+
+</button>
+
+
+</header>
+
+
+
+<!-- ========================================
+     MENÚ PRINCIPAL
+======================================== -->
+
+<section class="tarjetas">
+
+
+<!-- ========================================
+     REGISTRO
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnRegistro"
+onclick="abrir('registro.html')">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<h2>
+Registro
+</h2>
+
+<p>
+Alta de ciudadanos
+</p>
+
+</div>
+
+
+
+<!-- ========================================
+     PETICIONES
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnPeticiones"
+onclick="abrir('peticiones.html')">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<h2>
+Peticiones Ciudadanas
+</h2>
+
+<p>
+Solicitudes de apoyo
+</p>
+
+</div>
+
+
+
+<!-- ========================================
+     OPERACIONES
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnOperacion"
+onclick="abrir('operacion.html')">
+
+<i class="fa-solid fa-people-group"></i>
+
+<h2>
+Solicitudes para Operar
+</h2>
+
+<p>
+Lonas, bardas y reuniones
+</p>
+
+</div>
+
+
+
+<!-- ========================================
+     MIS REGISTROS
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnMisRegistros"
+onclick="abrir('misregistros.html')">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h2>
+Mis Registros
+</h2>
+
+<p>
+Consultar información capturada
+</p>
+
+</div>
+
+
+
+<!-- ========================================
+     ESTADÍSTICAS
+     SOLO ADMINISTRADOR
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnEstadisticas"
+onclick="abrir('estadistica.html')">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h2>
+Estadísticas
+</h2>
+
+<p>
+Indicadores y avances
+</p>
+
+</div>
+
+<!-- ========================================
+     INFORMES
+     ADMINISTRADOR Y COORDINADOR
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnInformes"
+onclick="abrir('informes.html')">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<h2>
+Informes
+</h2>
+
+<p>
+Generar y exportar informes
+</p>
+
+</div>
+
+<!-- ========================================
+     ADMINISTRAR USUARIOS
+     SOLO ADMINISTRADOR
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnUsuarios"
+onclick="abrir('usuarios.html')">
+
+<i class="fa-solid fa-user-gear"></i>
+
+<h2>
+Administrar Usuarios
+</h2>
+
+<p>
+Gestión de usuarios del sistema
+</p>
+
+</div>
+
+
+
+<!-- ========================================
+     CONFIGURACIÓN
+======================================== -->
+
+<div
+class="tarjeta"
+id="btnConfiguracion"
+onclick="abrir('validacion.html')">
+
+<i class="fa-solid fa-gear"></i>
+
+<h2>
+Validaciones
+</h2>
+
+<p>
+Validación de Registros
+</p>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script src="js/permisos.js"></script>
+
+<script src="js/menu.js"></script>
+
+
+</body>
+
+</html>

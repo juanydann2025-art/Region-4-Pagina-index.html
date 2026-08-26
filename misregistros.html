@@ -1,0 +1,240 @@
+/<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Mis Registros</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/estilosss.css">
+
+<style>
+
+body {
+  background: #f5f5f5;
+}
+
+.formulario {
+  max-width: 900px;
+  margin: 25px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.12);
+}
+
+h1 {
+  background: #f8caca;
+  color: #b30000;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.botonesCategorias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.btnCategoria {
+  border: none;
+  background: #c62828;
+  color: white;
+  padding: 14px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btnCategoria:hover {
+  background: #9e1f1f;
+  transform: translateY(-2px);
+}
+
+.btnCategoria i {
+  margin-right: 6px;
+}
+
+#listaRegistros {
+  margin-top: 20px;
+}
+
+.tarjeta {
+  background: #fff;
+  border-left: 6px solid #c62828;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.10);
+}
+
+.tarjeta h2 {
+  color: #b30000;
+  margin-top: 0;
+}
+
+.dato {
+  margin: 6px 0;
+}
+
+.etiqueta {
+  font-weight: bold;
+  color: #555;
+}
+
+.sinRegistros {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+
+.cargando {
+  text-align: center;
+  color: #b30000;
+  padding: 25px;
+  font-weight: bold;
+}
+
+@media(max-width:700px) {
+
+  .botonesCategorias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media(max-width:450px) {
+
+  .botonesCategorias {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="formulario">
+
+<h1>
+
+<i class="fa-solid fa-folder-open"></i>
+
+Mis Registros
+
+</h1>
+
+
+<div class="botonesCategorias">
+
+<button
+class="btnCategoria"
+onclick="cargarCategoria('ciudadanos')">
+
+<i class="fa-solid fa-users"></i>
+
+Ciudadanos
+
+</button>
+
+
+<button
+class="btnCategoria"
+onclick="cargarCategoria('peticiones')">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Peticiones
+
+</button>
+
+
+<button
+class="btnCategoria"
+onclick="cargarCategoria('operaciones')">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+Lonas
+
+</button>
+
+
+<button
+class="btnCategoria"
+onclick="cargarCategoria('bardas')">
+
+<i class="fa-solid fa-brush"></i>
+
+Bardas
+
+</button>
+
+
+<button
+class="btnCategoria"
+onclick="cargarCategoria('reuniones')">
+
+<i class="fa-solid fa-users"></i>
+
+Reuniones
+
+</button>
+
+</div>
+
+
+<div id="listaRegistros">
+
+<div class="sinRegistros">
+
+<i class="fa-solid fa-hand-pointer"></i>
+
+<br><br>
+
+Selecciona una categoría para consultar tus registros.
+
+</div>
+
+</div>
+
+
+<br>
+
+
+<button
+class="boton"
+onclick="regresar()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Regresar
+
+</button>
+
+
+</div>
+
+
+<script src="js/misregistros.js"></script>
+
+</body>
+
+</html>

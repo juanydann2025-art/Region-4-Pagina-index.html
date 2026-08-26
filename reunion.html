@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Reunión Vecinal</title>
+
+  <link
+    rel="stylesheet"
+    href="css/reu.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div class="formulario">
+
+
+  <!-- =====================================
+       ENCABEZADO
+  ====================================== -->
+
+  <h1>
+     Reunión Vecinal
+  </h1>
+
+
+  <!-- =====================================
+       FECHA
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="fecha">
+      Fecha de reunión
+    </label>
+
+    <input
+      type="date"
+      id="fecha"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       HORA
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="hora">
+      Hora de reunión
+    </label>
+
+    <input
+      type="time"
+      id="hora"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       PERSONAS
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="personas">
+      ¿Cuántas personas asistirán?
+    </label>
+
+    <input
+      type="number"
+      id="personas"
+      min="1"
+      placeholder="Número de personas"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       SECCIÓN
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="seccion">
+      Sección
+    </label>
+
+    <select id="seccion">
+
+      <option value="">
+        Seleccione sección
+      </option>
+
+  <option value="4953">4953</option>
+                <option value="4954">4954</option>
+                <option value="4955">4955</option>
+                <option value="4962">4962</option>
+                <option value="5025">5025</option>
+                <option value="5026">5026</option>
+                <option value="5027">5027</option>
+                <option value="5034">5034</option>
+                <option value="5035">5035</option>
+                <option value="5036">5036</option>
+                <option value="5049">5049</option>
+                <option value="5050">5050</option>
+                <option value="5066">5066</option>
+                <option value="5067">5067</option>
+                <option value="5068">5068</option>
+                <option value="5069">5069</option>
+                <option value="5070">5070</option>
+                <option value="5071">5071</option>
+                <option value="5072">5072</option>
+                <option value="5073">5073</option>
+                <option value="5074">5074</option>
+                <option value="5075">5075</option>
+                <option value="5076">5076</option>
+                <option value="5077">5077</option>
+                <option value="5078">5078</option>
+                <option value="5079">5079</option>
+                <option value="5080">5080</option>
+
+    </select>
+
+  </div>
+
+
+  <!-- =====================================
+       COMUNIDAD
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="comunidad">
+      Comunidad
+    </label>
+
+    <select id="comunidad">
+
+      <option value="">
+        Seleccione primero una sección
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- =====================================
+       CALLE
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="calle">
+      Calle
+    </label>
+
+    <input
+      type="text"
+      id="calle"
+      placeholder="Nombre de la calle"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       NÚMERO
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="numero">
+      Número
+    </label>
+
+    <input
+      type="text"
+      id="numero"
+      placeholder="Número"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       RESPONSABLE
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="responsable">
+      Responsable de la reunión
+    </label>
+
+    <input
+      type="text"
+      id="responsable"
+      placeholder="Nombre del responsable"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       TELÉFONO
+  ====================================== -->
+
+  <div class="campo">
+
+    <label for="telefono">
+      Teléfono del responsable
+    </label>
+
+    <input
+      type="tel"
+      id="telefono"
+      placeholder="Teléfono"
+    >
+
+  </div>
+
+
+  <!-- =====================================
+       BOTÓN
+  ====================================== -->
+
+  <button
+    type="button"
+    class="boton"
+    onclick="guardarReunion()"
+  >
+    Guardar Reunión
+  </button>
+
+
+</div>
+
+
+<script src="js/reunion.js"></script>
+
+
+</body>
+
+</html>

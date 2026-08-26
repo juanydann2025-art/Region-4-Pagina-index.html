@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Estadísticas</title>
+
+<link rel="stylesheet"
+      href="css/estadistica.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="formulario">
+
+
+<!-- ========================================
+     ENCABEZADO
+======================================== -->
+
+<h1>
+
+<i class="fa-solid fa-chart-line"></i>
+
+Estadísticas
+
+</h1>
+
+
+
+<!-- ========================================
+     BOTÓN REGRESAR
+======================================== -->
+
+<button
+type="button"
+class="boton regresar"
+onclick="regresarMenu()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Regresar al menú
+
+</button>
+
+
+
+<!-- ========================================
+     INFORMACIÓN DEL ADMINISTRADOR
+======================================== -->
+
+<div class="encabezado">
+
+<div>
+
+<strong>Usuario:</strong>
+
+<span id="nombreUsuario">
+Cargando...
+</span>
+
+</div>
+
+
+<div>
+
+<strong>Rol:</strong>
+
+<span id="rolUsuario">
+Cargando...
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================================
+     RESUMEN GENERAL
+======================================== -->
+
+<h2>
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Resumen general
+
+</h2>
+
+
+
+<div class="resumen">
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Total de registrados
+</span>
+
+<strong id="totalRegistrados">
+0
+</strong>
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Total lista nominal
+</span>
+
+<strong id="totalNominal">
+0
+</strong>
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Pendientes por votar
+</span>
+
+<strong id="totalPendientes">
+0
+</strong>
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Ya votaron
+</span>
+
+<strong id="totalVotaron">
+0
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<!-- ========================================
+     PORCENTAJES
+======================================== -->
+
+<h2>
+
+<i class="fa-solid fa-percent"></i>
+
+Porcentajes generales
+
+</h2>
+
+
+
+<div class="resumen">
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Registrados de la lista nominal
+</span>
+
+<strong id="piePorcentajeRegistrados">
+0%
+</strong>
+
+</div>
+
+
+
+<div class="tarjeta">
+
+<span class="titulo">
+Votaron de los registrados
+</span>
+
+<strong id="piePorcentajeVotaron">
+0%
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<!-- ========================================
+     ESTADÍSTICA POR SECCIÓN
+======================================== -->
+
+<div class="titulo-seccion-estadistica">
+
+
+<h2>
+
+<i class="fa-solid fa-chart-column"></i>
+
+Estadística por sección
+
+</h2>
+
+
+
+<!-- ========================================
+     LEYENDA DE COLORES
+======================================== -->
+
+<div
+class="leyenda-padron"
+style="
+display:flex;
+align-items:center;
+justify-content:flex-end;
+flex-wrap:wrap;
+gap:8px;
+font-size:12px;
+">
+
+
+<span
+style="
+font-weight:bold;
+margin-right:3px;
+">
+
+Avance del padrón:
+
+</span>
+
+
+
+<!-- 0 - 39% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#ffcccc;
+border:1px solid #b00000;
+border-radius:3px;
+">
+
+</span>
+
+0–39% Muy bajo
+
+</span>
+
+
+
+<!-- 40 - 54% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#ffe0b2;
+border:1px solid #e65100;
+border-radius:3px;
+">
+
+</span>
+
+40–54% Regular
+
+</span>
+
+
+
+<!-- 55 - 69% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#fff3cd;
+border:1px solid #856404;
+border-radius:3px;
+">
+
+</span>
+
+55–69% En rango
+
+</span>
+
+
+
+<!-- 70 - 79% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#d9f2d9;
+border:1px solid #286b28;
+border-radius:3px;
+">
+
+</span>
+
+70–79% Buen avance
+
+</span>
+
+
+
+<!-- 80 - 90% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#c8e6c9;
+border:1px solid #1b5e20;
+border-radius:3px;
+">
+
+</span>
+
+80–90% Normal
+
+</span>
+
+
+
+<!-- 91 - 99% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#d6e4ff;
+border:1px solid #174ea6;
+border-radius:3px;
+">
+
+</span>
+
+91–99% Muy bueno
+
+</span>
+
+
+
+<!-- 100% -->
+
+<span
+style="
+display:inline-flex;
+align-items:center;
+gap:4px;
+white-space:nowrap;
+">
+
+<span
+style="
+display:inline-block;
+width:14px;
+height:14px;
+min-width:14px;
+background-color:#e1bee7;
+border:1px solid #6a1b9a;
+border-radius:3px;
+">
+
+</span>
+
+100% Excelente
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ========================================
+     TABLA DE SECCIONES
+======================================== -->
+
+<div class="tabla-contenedor">
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Sección
+</th>
+
+<th>
+Lista nominal
+</th>
+
+<th>
+Registrados
+</th>
+
+<th>
+% registrados
+</th>
+
+<th>
+Votaron
+</th>
+
+<th>
+% votaron
+</th>
+
+<th>
+Pendientes
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+id="tablaSecciones">
+
+<tr>
+
+<td colspan="7">
+
+Cargando información...
+
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+<hr>
+
+
+
+<!-- ========================================
+     REGISTROS POR USUARIO
+======================================== -->
+
+<h2>
+
+<i class="fa-solid fa-users"></i>
+
+Registros por usuario
+
+</h2>
+
+
+
+<div class="tabla-contenedor">
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Usuario
+</th>
+
+<th>
+Nombre
+</th>
+
+<th>
+Total de registros
+</th>
+
+<th>
+Fecha del último registro
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody
+id="tablaUsuarios">
+
+<tr>
+
+<td colspan="4">
+
+Cargando información...
+
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+<!-- ========================================
+     BOTONES
+======================================== -->
+
+<div class="botones">
+
+
+<button
+type="button"
+class="boton actualizar"
+onclick="cargarEstadistica()">
+
+<i class="fa-solid fa-rotate"></i>
+
+Actualizar estadísticas
+
+</button>
+
+
+<button
+type="button"
+class="boton regresar"
+onclick="regresarMenu()">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Regresar al menú
+
+</button>
+
+
+</div>
+
+
+
+<div
+id="mensaje">
+
+</div>
+
+
+</div>
+
+
+
+<script src="js/estadistica.js"></script>
+
+
+</body>
+
+</html>

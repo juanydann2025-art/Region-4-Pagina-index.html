@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Validación de Registros
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/validacion.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CONTENEDOR PRINCIPAL
+     ========================================================= -->
+
+<div class="contenedor">
+
+
+  <!-- =======================================================
+       ENCABEZADO
+       ======================================================= -->
+
+  <div class="encabezado">
+
+    <div class="encabezado-info">
+
+      <h1>
+        Validación de Registros
+      </h1>
+
+      <p>
+        Seleccione una categoría para cargar los registros pendientes.
+      </p>
+
+    </div>
+
+
+    <button
+      id="btnActualizar"
+      class="btn-actualizar"
+      disabled>
+
+      🔄 Actualizar
+
+    </button>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       BUSQUEDA Y FILTROS
+       ======================================================= -->
+
+  <div class="panel-busqueda">
+
+
+    <div class="campo-filtro campo-categoria-principal">
+
+      <label for="filtroCategoria">
+        Categoría a validar
+      </label>
+
+
+      <select id="filtroCategoria">
+
+        <option
+          value=""
+          selected>
+
+          Seleccione una categoría
+
+        </option>
+
+
+        <option value="Ciudadanos">
+          Ciudadanos
+        </option>
+
+
+        <option value="Peticiones">
+          Peticiones
+        </option>
+
+
+        <option value="Operaciones">
+          Operaciones
+        </option>
+
+
+        <option value="Bardas">
+          Bardas
+        </option>
+
+
+        <option value="Reuniones">
+          Reuniones
+        </option>
+
+      </select>
+
+    </div>
+
+
+
+    <div class="campo-busqueda">
+
+      <label for="buscarRegistro">
+        Buscar dentro de la categoría
+      </label>
+
+
+      <input
+        type="text"
+        id="buscarRegistro"
+        placeholder="Folio, nombre, usuario, sección, comunidad..."
+        autocomplete="off"
+        disabled>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       MENSAJE
+       ======================================================= -->
+
+  <div
+    id="mensaje"
+    class="mensaje oculto">
+  </div>
+
+
+
+  <!-- =======================================================
+       RESUMEN
+       ======================================================= -->
+
+  <div class="resumen">
+
+
+    <div class="tarjeta">
+
+      <span>
+        Registros pendientes
+      </span>
+
+      <strong id="totalPendientes">
+        0
+      </strong>
+
+    </div>
+
+
+
+    <div class="tarjeta">
+
+      <span>
+        Total de duplicados
+      </span>
+
+      <strong id="totalDuplicados">
+        0
+      </strong>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       TABLA
+       ======================================================= -->
+
+  <div class="tabla-contenedor">
+
+
+    <table id="tablaRegistros">
+
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Folio
+          </th>
+
+          <th>
+            Categoría
+          </th>
+
+          <th>
+            Fecha registro
+          </th>
+
+          <th>
+            Usuario que generó
+          </th>
+
+          <th>
+            Nombre
+          </th>
+
+          <th>
+            Duplicado
+          </th>
+
+          <th>
+            Acción
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+
+      <tbody id="cuerpoTabla">
+
+        <tr>
+
+          <td
+            colspan="7"
+            class="tabla-vacia">
+
+            Seleccione una categoría para cargar los registros.
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+
+    </table>
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL DE VALIDACIÓN
+     ========================================================= -->
+
+<div
+  id="modalValidacion"
+  class="modal oculto">
+
+
+  <div class="modal-contenido">
+
+
+    <!-- =====================================================
+         ENCABEZADO DEL MODAL
+         ===================================================== -->
+
+    <div class="modal-header">
+
+
+      <div class="modal-titulo">
+
+        <span class="modal-icono">
+          ✓
+        </span>
+
+        <div>
+
+          <h2>
+            Detalle y validación del registro
+          </h2>
+
+          <p>
+            Revise la información y las fotografías antes de validar.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="btnCerrarModal"
+        class="btn-cerrar"
+        type="button"
+        title="Cerrar">
+
+        ×
+
+      </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DETALLE DEL REGISTRO
+         ===================================================== -->
+
+    <div
+      id="detalleRegistro"
+      class="detalle-registro">
+
+    </div>
+
+
+
+    <!-- =====================================================
+         COMENTARIOS
+         ===================================================== -->
+
+    <div class="campo-comentario">
+
+
+      <label for="comentarios">
+
+        Comentarios de validación
+
+      </label>
+
+
+      <textarea
+        id="comentarios"
+        rows="5"
+        placeholder="Escriba algún comentario sobre este registro...">
+      </textarea>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ACCIONES
+         ===================================================== -->
+
+    <div class="acciones-modal">
+
+
+      <button
+        id="btnCancelar"
+        class="btn-secundario"
+        type="button">
+
+        Cerrar
+
+      </button>
+
+
+      <button
+        id="btnValidar"
+        class="btn-validar"
+        type="button">
+
+        ✓ Validar registro
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+  src="js/validacion.js">
+</script>
+
+
+</body>
+
+</html>
